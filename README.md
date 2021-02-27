@@ -12,35 +12,38 @@ The rules are as follows:
 
     > **Winnings Calculation for each Round**
     >
-    > Perfect Score Scenario (> 1 winners)
+    > **💰💰 Perfect Score Scenario (> 1 winners)**
     > - Player A: 21 (+2 chips)
     > - Player B: 21 (+2 chips)
     > - Player C: 18 (-1 chips)
     > - Player D: 25 (-1 chips)
     >
-    > Perfect Score Scenario (1 winner)
+    >
+    > **💰💰📈 Perfect Score Scenario (1 winner)**
     > - Player A: 21 (+2 +3 chips)
     > - Player B: 20 (-1 chips)
     > - Player C: 18 (-1 chips)
     > - Player D: 26 (-1 chips)
     >
-    > Highest Score Scenario (> 1 winners)
+    >
+    > **💰 Highest Score Scenario (> 1 winners)**
     > - Player A: 20 (+1 chips)
     > - Player B: 18 (-1 chips)
     > - Player C: 20 (+1 chips)
     > - Player D: 27 (-1 chips)
     >
-    > Highest Score Scenario (1 winner)
+    > **💰📈 Highest Score Scenario (1 winner)**
     > - Player A: 20 (+1 +2 chips)
     > - Player B: 19 (-1 chips)
     > - Player C: 22 (-1 chips)
     >
-    > Fold Score Scenario (0 winners)
+    > **Fold Score Scenario (0 winners)**
     > - Player A: 22 (-0 chips)
     > - Player B: 26 (-0 chips)
     >
     > ------
-    > After every round,
+    > **After every round,**
+    > 
     > 1. If there are players that obtained a perfect 21, they are counted as winners and the rest as losers. They win 2 chips.
     > 2. Else if there are players that obtained the closest score to 21 and has not busted (over 21), they will win. The players wins 1 chip.
     > 3. If there is only 1 winner, the winner gets all losing active chips.
@@ -50,7 +53,7 @@ The rules are as follows:
 
 3. Once all the active users chips have been exhausted, the game ends.
 
-## Get Started
+## Getting Started
 
 ![Getting Started](docs/start-game.gif)
 
@@ -110,3 +113,5 @@ The card stock photos are obtained from [superdevresources.com](https://superdev
 The favicon is generated from [favicon generator](https://favicon.io/favicon-generator).
 
 References for redux/typescript guideline from [typeofnan.dev](https://typeofnan.dev/setup-a-typescript-react-redux-project/) ([repo](https://github.com/nas5w/ts-redux)).
+
+CSS buttons referred from [here](https://gradientbuttons.colorion.co).
