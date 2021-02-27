@@ -1,0 +1,452 @@
+@import "https://fonts.googleapis.com/css2?family=Alfa+Slab+One&Bebas+Neue&display=swap";
+@import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css";
+@keyframes c1-shuffle {
+	0% {
+		margin-top: -150px;
+		transform: rotate(80deg);
+	}
+	50% {
+		margin-top: 0;
+		transform: rotate(220deg);
+	}
+	100% {
+		transform: rotate(90deg);
+	}
+}
+@keyframes c2-shuffle {
+	0% {
+		margin-left: -355px;
+		transform: rotate(40deg);
+	}
+	50% {
+		margin-left: -145px;
+		transform: rotate(145deg);
+	}
+	100% {
+		transform: rotate(125deg);
+	}
+}
+@keyframes c3-shuffle {
+	0% {
+		margin-bottom: -150px;
+		transform: rotate(340deg);
+	}
+	50% {
+		margin-bottom: 0;
+		transform: rotate(95deg);
+	}
+	100% {
+		transform: rotate(155deg);
+	}
+}
+@keyframes appear-from-right {
+	from {
+		margin-right: -125px;
+	}
+	to {
+		margin-right: 0;
+	}
+}
+@keyframes appear-from-left {
+	from {
+		margin-left: -145px;
+	}
+	to {
+		margin-left: 25px;
+	}
+}
+html {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	overflow-y: hidden;
+}
+body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	overflow-y: hidden;
+	background-image: linear-gradient(to bottom, #085206 0%, #0f800e 45%, #085206 100%);
+	background-size: 200% auto;
+	font-size: 16px;
+	font-family: 'Bebas Neue', sans-serif;
+}
+#root {
+	display: inline;
+}
+.deck {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+	padding: 15px;
+	.holder {
+		border: rgba(255, 255, 255, .5) 10px solid;
+		border-radius: 35px;
+		padding: 50px;
+		padding-bottom: 25px;
+		display: flex;
+		.card-holder {
+			display: flexbox;
+			margin: 0 0 0;
+			padding: 0px 25px;
+			padding-right: 75px;
+			padding-left: 50px;
+			img {
+				height: 200px;
+				width: auto;
+				-ms-transform: rotate(90deg);
+				transform: rotate(90deg);
+				display: inline-flexbox;
+				transition: 1s;
+			}
+			img.c2 {
+				position: absolute;
+				transform: rotate(125deg);
+				margin-left: -145px;
+			}
+			img.c3 {
+				position: absolute;
+				transform: rotate(155deg);
+				//margin-top: -200px;
+				margin-top: 0;
+				margin-left: -140px;
+			}
+		}
+		.card-holder.shuffle {
+			.c1 {
+				animation: c1-shuffle 1s forwards;
+			}
+			.c2 {
+				animation: c2-shuffle 1s forwards;
+			}
+			.c3 {
+				animation: c3-shuffle 1s forwards;
+			}
+		}
+
+		button {
+			display: block;
+			width: 100%;
+			font-size: 16px;
+			padding: 12px 15px;
+			margin: 20px 0 0;
+			font-weight: 600;
+			text-align: center;
+			outline: 0;
+			border-width: 2px;
+			border-radius: 10px;
+			display: block;
+			cursor: pointer;
+			transition: 0.25s;
+			text-align: center;
+			text-transform: uppercase;
+			background-size: 200% auto;
+			&:hover {
+				background: #444;
+				background-position: right center;
+				color: #fff;
+				text-decoration: none;
+				box-shadow: 0 0 20px #eee;
+			}
+			&:disabled {
+				opacity: .65;
+				color: #fff;
+				cursor: default;
+				box-shadow: none;
+				background: #444;
+			}
+			.fas {
+				margin-right: 7px;
+				display: inline-block;
+			}
+			.far {
+				margin-right: 7px;
+				display: inline-block;
+			}
+
+			&.shuffle {
+				background-image: linear-gradient(to right, #FFB75E 0%, #ED8F03 51%, #FFB75E 100%);
+				color: white;
+				border-color: #ED8F03;
+			}
+			&.draw {
+				background-image: linear-gradient(to right, #ff4b1f 0%, #ff9068 51%, #ff4b1f 100%);
+				color: white;
+			}
+			&.next {
+				background-image: linear-gradient(to right, #948E99 0%, #2E1437 51%, #948E99 100%);
+				color: white;
+			}
+
+			&.shuffle:disabled,
+			&.draw:disabled,
+			&.next:disabled {
+				opacity: 0;
+			}
+
+			&.join {
+				background-image: linear-gradient(to right, #F3904F 0%, #3B4371  51%, #F3904F  100%);
+				color: white;
+			}
+		}
+
+		.actions-control {
+			display: flexbox;
+			width: 220px;
+			margin-top: -50px;
+			margin-right: -220px;
+			padding-top: 15px;
+			padding-left: 20px;
+			.bet-pool {
+				background-image: linear-gradient(to right, #b8b8b8 0%, #FFFFFF 51%, #dfdcd9 100%);
+				text-align: center;
+				text-transform: uppercase;
+				background-size: 200% auto;
+				color: #444;
+				padding: 15px 25px;
+				border-radius: 5px;
+				p {
+					margin: 0;
+					span {
+						font-weight: 600;
+					}
+				}
+				.fas {
+					display: inline-block;
+					margin-right: 10px;
+					color: #b7850a;
+				}
+			}
+		}
+		.name {
+			position: absolute;
+			margin: 0;
+			margin-top: 0px;
+			padding: 0;
+			margin-top: -68px;
+			margin-left: -20px;
+			width: 270px;
+			text-align: center;
+			.label {
+				padding: 5px;
+				color: #fff;
+				font-size: 20px;
+				font-family: 'Alfa Slab One', cursive;
+				background: rgba(15, 128, 14, .5);
+			}
+		}
+		.enter-controls {
+			margin-top: -15px;
+			margin-right: -5px;
+			min-width: 250px;
+			max-width: 250px;
+			p {
+				margin: 0 0 15px;
+				padding: 0;
+				text-transform: uppercase;
+				font-weight: 600;
+				text-align: center;
+				color: #fff;
+				font-size: 14px;
+			}
+			.error {
+				color: #ff9090;
+			}
+			.enter {
+				background-image: linear-gradient(to right, #F2994A 0%, #F2C94C 51%, #F2994A 100%);
+				margin: 25px 0 0;
+				padding: 12px 45px;
+				text-align: center;
+				text-transform: uppercase;
+				transition: 0.25s;
+				background-size: 200% auto;
+				color: white;
+				border-radius: 10px;
+				display: block;
+				cursor: pointer;
+				font-weight: 600;
+				width: 100%;
+				&:hover {
+					background-position: right center;
+					color: #fff;
+					text-decoration: none;
+					box-shadow: 0 0 20px #eee;
+				}
+			}
+			input {
+				&:hover {
+					box-shadow: 0 0 20px #eee;
+				}
+				&:focus {
+					box-shadow: 0 0 20px #eee;
+				}
+				display: block;
+				margin: 0 0 15px;
+				outline: 0;
+				border-style: solid;
+				background: #fff;
+				border-radius: 5px;
+				padding: 7px 12px;
+				font-size: 16px;
+				width: 220px;
+			}
+		}
+	}
+}
+.player {
+	position: fixed;
+	padding: 25px 15px 15px;
+	margin: 0;
+	border: rgba(255, 255, 255, .5) 7px solid;
+	transition: .25s;
+	.name {
+		position: absolute;
+		margin: 0 auto;
+		text-align: center;
+		width: 100%;
+		top: -15px;
+		.label {
+			background: rgba(15, 128, 14, .5);
+			padding: 5px;
+			color: #fff;
+			font-size: 18px;
+			font-family: 'Alfa Slab One', cursive;
+		}
+	}
+	.coin {
+		position: fixed;
+		z-index: 2;
+		background: rgba(0, 0, 0, .65);
+		margin: 0;
+		padding: 15px 18px;
+		color: #fff;
+		font-weight: 600;
+		.fas {
+			display: inline-box;
+			margin-right: 7px;
+			color: #f2cc00;
+		}
+	}
+	.holder {
+		display: flex;
+		.card {
+			display: inline-flex;
+			margin-left: 25px;
+			padding: 0;
+			img {
+				background: none;
+				height: 150px;
+				width: auto;
+				margin: 0;
+			}
+		}
+		.card.new {
+			animation: appear-from-right .25s forwards;
+		}
+	}
+}
+.player.p1 {
+	border-top-left-radius: 35px;
+	bottom: 0;
+	right: 0;
+	border-right: 0;
+	border-bottom: 0;
+	padding-left: 0;
+	padding-right: 25px;
+	.coin {
+		right: 0;
+		bottom: 0;
+		border-top-left-radius: 15px;
+	}
+}
+.player.p2 {
+	border-top-right-radius: 35px;
+	border-left: 0;
+	bottom: 0;
+	left: 0;
+	border-bottom: 0;
+	padding-left: 0;
+	padding-right: 25px;
+	.coin {
+		left: 0;
+		bottom: 0;
+		border-top-right-radius: 15px;
+	}
+	.holder {
+		.card.new {
+			animation: appear-from-left .25s forwards;
+		}
+	}
+}
+.player.p3 {
+	border-bottom-right-radius: 35px;
+	border-left: 0;
+	top: 0;
+	left: 0;
+	border-top: 0;
+	padding-left: 0;
+	padding-right: 25px;
+	padding-top: 15px;
+	padding-bottom: 25px;
+	.coin {
+		top: 0;
+		left: 0;
+		border-bottom-right-radius: 15px;
+	}
+	.holder {
+		.card.new {
+			animation: appear-from-left .25s forwards;
+		}
+		.card {
+			img {
+				-ms-transform: rotate(180deg);
+				transform: rotate(180deg);
+			}
+		}
+	}
+	.name {
+		bottom: -15px;
+		top: unset;
+	}
+}
+.player.p4 {
+	border-bottom-left-radius: 35px;
+	border-right: 0;
+	top: 0;
+	right: 0;
+	border-top: 0;
+	padding-left: 0;
+	padding-right: 25px;
+	padding-top: 15px;
+	padding-bottom: 25px;
+	.coin {
+		top: 0;
+		right: 0;
+		border-bottom-left-radius: 15px;
+	}
+	.name {
+		bottom: -15px;
+		top: unset;
+	}
+	.holder {
+		.card {
+			img {
+				-ms-transform: rotate(180deg);
+				transform: rotate(180deg);
+			}
+		}
+	}
+}
+.player.you {
+	border-color: rgba(242, 238, 0, 0.5);
+}
+.player.active {
+	box-shadow: 0 0 20px #eee;
+}
+.player.winner {
+	box-shadow: 0 0 120px #ff4b4b;
+}
+.player.dead {
+	opacity: .35;
+}
