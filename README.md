@@ -81,9 +81,9 @@ After that has been setup,
 
 The webapp is written in [Typescript](https://www.typescriptlang.org/) built on [React](https://reactjs.org/) and compiled using [Webpack](https://webpack.js.org/).
 
-The server is written in Typescript using [NodeJS](https://nodejs.org/en/). Tests is done using [Jest](https://jestjs.io/).
+The server is written in Typescript using [NodeJS](https://nodejs.org/en/). Tests are done using [Jest](https://jestjs.io/).
 
-The [socket.io](https://socket.io/) server connects to the [Redis](https://redis.io/) database to store temporary game session information.
+The [socket.io](https://socket.io/) server connects to the [Redis](https://redis.io/) database to store game sessions.
 
 The app is hosted on [Docker](https://www.docker.com) containers and setup is done using [Pulumi](https://www.pulumi.com/).
 
