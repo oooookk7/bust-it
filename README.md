@@ -115,3 +115,5 @@ The favicon is generated from [favicon generator](https://favicon.io/favicon-gen
 References for redux/typescript guideline from [typeofnan.dev](https://typeofnan.dev/setup-a-typescript-react-redux-project/) ([repo](https://github.com/nas5w/ts-redux)).
 
 CSS buttons referred from [here](https://gradientbuttons.colorion.co).
+
+Screen capture GIFs made using [GIF cap](https://gifcap.dev/)
