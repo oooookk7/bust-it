@@ -1,4 +1,4 @@
-# ♢ ♣ ♡ ♠ Bust It!
+# ♦️ ♣ ❤️ ♠ Bust It!
 
 ![Introduction](docs/introduction.gif)
 
